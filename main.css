@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300, 400,600&display=swap");
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.theme--light {
+  --back: #dfdfec;
+  --element: linear-gradient(45deg, #bfbfd9, #fff);
+  --shadow: #bfbfd9;
+  --pils-back: rgba(0, 0, 0, 0.05);
+  --text-primary: #333;
+  --text-secondary: #555;
+  --text-third: #000; 
+}
+
+.theme--dark {
+  --back: #131417;
+  --element: linear-gradient(45deg, #101010, #2c3e50);
+  --shadow: #3f5973;
+  --pils-back: rgba(255, 255, 255, 0.05);
+  --text-primary: white;
+  --text-secondary: #6b8cae;
+  --text-third: #777;
+}
+
+input[type="checkbox"] {
+  z-index: -1;
+  display: none;
+}
+
+a:visited, a:link {
+  text-decoration: none;
+}
+
+html, body {
+  background: var(--back);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: .9rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+#container {
+  position: relative;
+  background: var(--element);
+  -webkit-box-shadow: -5px -5px 15px -4px rgba(0, 0, 0, 0.1);
+          box-shadow: -5px -5px 15px -4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  -webkit-transition: all .6s;
+  transition: all .6s;
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+  -webkit-animation: fade_in 1s forwards;
+          animation: fade_in 1s forwards;
+  opacity: 0;
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  height: 65px;
+  z-index: 50;
+}
+
+.night-mode {
+  position: absolute;
+  right: 0;
+  text-align: center;
+  margin: 10px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+night-mode:hover {
+  background: rgba(100, 100, 100, 0.1);
+}
+
+.night-mode:active {
+  background: rgba(100, 100, 100, 0.3);
+}
+
+.night-mode i {
+  line-height: 45px;
+  color: var(--text-primary);
+  font-size: 16px;
+}
+
+.left-section {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 20px;
+}
+
+ .pic {
+  width: 150px;
+  height: 150px;
+  -ms-flex-preferred-size: 165px;
+      flex-basis: 165px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 0 0 10px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 0 10px 6px rgba(0, 0, 0, 0.2);
+}
+
+.profile-details {
+  margin-left: 20px;
+}
+
+.name {
+  color: var(--text-primary);
+  font-size: 1.45rem;
+  padding-bottom: 10px;
+}
+
+.profile-maps {
+  display: block;
+  color: var(--text-third);
+  font-size: 1rem;
+}
+
+.profile-maps i {
+  color: var(--text-third);
+  font-size: .8rem;
+}
+
+.profile-summary {
+  color: var(--text-secondary);
+  font-size: .925rem;
+}
+
+.profile-cv {
+  display: block;
+  margin-top: 20px;
+  color: var(--text-cv);
+  font-weight: 700;
+}
+
+.profile-pils {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+.pils {
+  background: var(--pils-back);
+  -webkit-box-shadow: inset 0 0 0 1px var(--border), 0 10px 30px -10px rgba(0, 0, 0, 0.12);
+          box-shadow: inset 0 0 0 1px var(--border), 0 10px 30px -10px rgba(0, 0, 0, 0.12);
+  border-radius: 60px;
+  font-size: 13px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  cursor: pointer;
+  margin: 5px;
+  color: var(--text-primary);
+}
+
+.pils a,.pils a:visited, .pils a:link {
+  display: block;
+  text-decoration: none;
+  color: var(--main-2-fore);
+  padding: 5px 10px;
+}
+
+.pils a i, .pils a:visited i, .pils a:link i {
+  padding-right: 2px;
+}
+
+.pils:nth-child(1):hover {
+  -webkit-box-shadow: inset 0 0 0 1px #6f95fe, 0 10px 35px -10px #6f95fe;
+          box-shadow: inset 0 0 0 1px #6f95fe, 0 10px 35px -10px #6f95fe;
+}
+
+.pils:nth-child(1):hover i {
+  color: #6f95fe;
+}
+
+.pils:nth-child(2):hover {
+  -webkit-box-shadow: inset 0 0 0 1px #fff, 0 10px 30px -10px rgba(100, 100, 100, 0.6);
+          box-shadow: inset 0 0 0 1px #fff, 0 10px 30px -10px rgba(100, 100, 100, 0.6);
+}
+
+.pils:nth-child(2):hover i {
+  color: #fff;
+}
+
+.pils:nth-child(3):hover {
+  -webkit-box-shadow: inset 0 0 0 1px #f154ff, 0 10px 35px -10px rgba(255, 59, 245, 0.5);
+          box-shadow: inset 0 0 0 1px #f154ff, 0 10px 35px -10px rgba(255, 59, 245, 0.5);
+}
+
+.pils:nth-child(3):hover i {
+  color: #f154ff;
+}
+
+.pils:nth-child(4):hover {
+  -webkit-box-shadow: inset 0 0 0 1px #163ca3, 0 10px 30px -10px rgba(13, 60, 121, 0.5);
+          box-shadow: inset 0 0 0 1px #163ca3, 0 10px 30px -10px rgba(13, 60, 121, 0.5);
+}
+
+.pils:nth-child(4):hover i {
+  color: #163ca3;
+}
+.more {
+  margin: auto;
+  margin-top: 20px;
+  background: var(--pils-back);
+  border-radius: 60px;
+  color: var(--text-primary);
+
+
+}
+@media (min-width: 768px) {
+  #container {
+    width: 540px;
+    height: 300px;
+  }
+  #container .left-section {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .profile-pic {
+    margin: 0 15px;
+  }
+  .profile-details {
+    -ms-flex-preferred-size: 400px;
+        flex-basis: 400px;
+  }
+  .profile-pils {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    margin: 0px 10px;
+    -ms-flex-preferred-size: 240px;
+        flex-basis: 240px;
+  }
+}
+
+@-webkit-keyframes fade_in {
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes fade_in {
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
