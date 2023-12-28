@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Визитная карточка</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/20cee36f21.js" crossorigin="anonymous"></script>
+</head>
+<body id="body" class="theme--dark">
+    <input type="checkbox" id="menu">
+    <input type="checkbox" id="night">
+    <div id="container">
+        <div class="header">
+            <label for="night" class="night-mode" onclick="enableNight()">
+                <i class="fa-solid fa-moon"></i>
+            </label>
+        </div>
+        <section class="left-section">
+            <img src="photo.jpeg" alt="" class="pic">
+            <div class="profile-details">
+                <span class="profile-maps">
+                    <i class="fa-solid fa-location-dot"></i> Санкт-Петербург. ИТМО.
+                </span>
+                <p class="name">Анатолий Коропченко</p>
+                <span class="profile-summary">Разработчик, аналитик и проектный менеджер</span>
+                <form action="addition.html" ><button class="more">Больше</button></form>
+            </div>
+            <div class="profile-pils">
+                <span class="pils"><a href="https://vk.com/justkoban"><i class="fa-brands fa-vk"></i> VK</a></span>
+                <span class="pils"><a href="https://github.com/Anatoly-Ko"><i class="fa-brands fa-github"></i> Github</a></span>
+                <span class="pils"><a href="https://t.me/akoo1a55"><i class="fa-brands fa-telegram"></i> Telegram</a></span>
+                <span class="pils"><a href="https://www.linkedin.com/me?trk=p_mwlite_feed_updates-secondary_nav"><i class="fa-brands fa-linkedin"></i> Linkedin</a></span>
+            </div>
+        </section>
+        <div class="front-smooth"></div>
+    </div>
+    <script>
+        let enableNight = () => {
+            var body = document.getElementById("body");
+            if (body.classList.contains('theme--light')) {
+                body.classList.remove('theme--light');
+                body.classList.add('theme--dark');
+            } else {
+                body.classList.remove('theme--dark');
+                body.classList.add('theme--light');
+            }
+        }
+    </script>
+</body>
+</html>
