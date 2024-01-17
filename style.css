@@ -27,19 +27,20 @@ body {
 
 .content {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
 
     position: absolute;
-    top: 0; 
-    left: 5%; 
-    z-index: 3; 
+    top: 0;
+    left: 5%;
+    z-index: 3;
 }
 
-.title{
-    width: 31ch;
+.title {
+    width: 85vw;
     overflow: hidden;
     color: white;
     font-size: 8vh;
@@ -71,6 +72,7 @@ body {
     top: 0;
     left: 0;
 }
+
 @keyframes cursor {
     0% {
         border-color: paleturquoise;
@@ -89,5 +91,10 @@ body {
 @keyframes printed-text {
     from {
         width: 0%;
+    }
+}
+@media (max-width: 768px) {
+    .content {
+        left: 0; /* Чтобы контент отобразился полностью на мобильных устройствах */
     }
 }
