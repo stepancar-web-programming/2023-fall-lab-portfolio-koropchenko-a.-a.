@@ -7,7 +7,6 @@ body {
     max-height: 100vh;
     overflow: hidden;
     position: relative;
-
     background-size: cover;
 }
 
@@ -40,15 +39,15 @@ body {
 }
 
 .title {
-    width: 86vw;
+    width: 100%;
     overflow: hidden;
     color: white;
-    font-size: 8vh;
+    font-size: 4vw;
     font-family: monospace;
     white-space: nowrap;
     border-right: 4px solid paleturquoise;
-    animation: printed-text 7s steps(31),
-        cursor .5s step-start infinite;
+    animation: printed-text 6.5s steps(35),
+        cursor .4s step-start infinite;
 }
 
 
@@ -95,6 +94,11 @@ body {
 }
 @media (max-width: 768px) {
     .content {
-        left: 0; /* Чтобы контент отобразился полностью на мобильных устройствах */
+        padding-left: 10px;
     }
+    .title {
+        font-size: 16px; 
+        border-right: 2px solid paleturquoise;
+      }
+    
 }

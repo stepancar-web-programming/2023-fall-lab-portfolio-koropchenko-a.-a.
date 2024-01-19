@@ -15,9 +15,9 @@
     <input type="checkbox" id="night">
     <div id="main-container">
         <div class="header">
-            <label for="night" class="night-mode" onclick="enableNight()">
+            <label for="night" class="night-mode" onclick="enableNight()" tabindex="0">
                 <i class="fa-solid fa-moon"></i>
-            </label>
+            </label>            
         </div>
         <section class="left-section">
             <img src="photo.jpeg" alt="" class="pic">
@@ -27,13 +27,13 @@
                 </span>
                 <p class="name">Анатолий Коропченко</p>
                 <span class="profile-summary">Разработчик, аналитик и проектный менеджер</span>
-                <form action="addition.html"><button class="more">Больше</button></form>
+                <form action="addition.html"><button class="more" tabindex="0">Больше</button></form>
             </div>
             <div class="profile-pils">
-                <span class="pils"><a href="https://vk.com/justkoban"><i class="fa-brands fa-vk"></i> VK</a></span>
-                <span class="pils"><a href="https://github.com/Anatoly-Ko"><i class="fa-brands fa-github"></i> Github</a></span>
-                <span class="pils"><a href="https://t.me/akoo1a55"><i class="fa-brands fa-telegram"></i> Telegram</a></span>
-                <span class="pils"><a href="https://www.linkedin.com/me?trk=p_mwlite_feed_updates-secondary_nav"><i class="fa-brands fa-linkedin"></i> Linkedin</a></span>
+                <span class="pils"><a href="https://vk.com/justkoban" tabindex="0"><i class="fa-brands fa-vk"></i> VK</a></span>
+                <span class="pils"><a href="https://github.com/Anatoly-Ko" tabindex="0"><i class="fa-brands fa-github"></i> Github</a></span>
+                <span class="pils"><a href="https://t.me/akoo1a55" tabindex="0"><i class="fa-brands fa-telegram"></i> Telegram</a></span>
+                <span class="pils"><a href="https://www.linkedin.com/me?trk=p_mwlite_feed_updates-secondary_nav" tabindex="0"><i class="fa-brands fa-linkedin"></i> Linkedin</a></span>                
             </div>
         </section>
         <div class="front-smooth"></div>
@@ -41,15 +41,39 @@
     <script>
         const enableNight = () => {
             var body = document.getElementById("body");
+            const moonIcon = document.querySelector('.fa-moon');
+            const sunIcon = document.querySelector('.fa-sun');
+    
             if (body.classList.contains('theme-light')) {
                 body.classList.remove('theme-light');
                 body.classList.add('theme-dark');
+                moonIcon.classList.remove('fa-moon');
+                moonIcon.classList.add('fa-sun');
             } else {
                 body.classList.remove('theme-dark');
                 body.classList.add('theme-light');
+                sunIcon.classList.remove('fa-sun');
+                sunIcon.classList.add('fa-moon');
             }
         }
+        function handleKeyPress(event) {
+
+    if (event.key === 'Enter' || event.key === ' ') {
+        if (document.activeElement.classList.contains('more')) {
+            window.location.href = "addition.html";
+        } else if (document.activeElement.classList.contains('night-mode')) {
+            enableNight();
+        } else if (document.activeElement.tagName === 'A') {
+            window.location.href = document.activeElement.href;
+        }
+    }
+}
+
+
+document.addEventListener('keydown', handleKeyPress);
+
     </script>
+    
 </body>
 
 </html>

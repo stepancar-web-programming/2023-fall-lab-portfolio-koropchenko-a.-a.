@@ -253,12 +253,12 @@ night-mode:hover {
 }
 
 @media (min-width: 768px) {
-    #container {
+    #main-container {
         width: 540px;
         height: 300px;
     }
 
-    #container .left-section {
+    #main-container .left-section {
         width: 100%;
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
