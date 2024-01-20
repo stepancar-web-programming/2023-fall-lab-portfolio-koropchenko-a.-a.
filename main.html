@@ -16,7 +16,7 @@
     <div id="main-container">
         <div class="header">
             <label for="night" class="night-mode" onclick="enableNight()" tabindex="0">
-                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun"></i>
             </label>
         </div>
         <section class="left-section">
@@ -30,16 +30,20 @@
                 <form action="addition.html"><button class="more" tabindex="0">Больше</button></form>
             </div>
             <div class="profile-pils">
-                <span class="pils"><a href="https://vk.com/justkoban" tabindex="0"><i class="fa-brands fa-vk"></i> VK</a></span>
-                <span class="pils"><a href="https://github.com/Anatoly-Ko" tabindex="0"><i class="fa-brands fa-github"></i> Github</a></span>
-                <span class="pils"><a href="https://t.me/akoo1a55" tabindex="0"><i class="fa-brands fa-telegram"></i> Telegram</a></span>
-                <span class="pils"><a href="https://www.linkedin.com/me?trk=p_mwlite_feed_updates-secondary_nav" tabindex="0"><i class="fa-brands fa-linkedin"></i> Linkedin</a></span>
+                <span class="pils"><a href="https://vk.com/justkoban" tabindex="0"><i class="fa-brands fa-vk"></i>
+                        VK</a></span>
+                <span class="pils"><a href="https://github.com/Anatoly-Ko" tabindex="0"><i
+                            class="fa-brands fa-github"></i> Github</a></span>
+                <span class="pils"><a href="https://t.me/akoo1a55" tabindex="0"><i class="fa-brands fa-telegram"></i>
+                        Telegram</a></span>
+                <span class="pils"><a href="https://www.linkedin.com/me?trk=p_mwlite_feed_updates-secondary_nav"
+                        tabindex="0"><i class="fa-brands fa-linkedin"></i> Linkedin</a></span>
             </div>
         </section>
         <div class="front-smooth"></div>
     </div>
     <script>
-        const enableNight = () => {
+        function enableNight() {
             const body = document.getElementById("body");
             const moonIcon = document.querySelector('.fa-moon');
             const sunIcon = document.querySelector('.fa-sun');
@@ -56,6 +60,8 @@
                 sunIcon.classList.add('fa-moon');
             }
         }
+
+
 
         function handleKeyPress(event) {
 
