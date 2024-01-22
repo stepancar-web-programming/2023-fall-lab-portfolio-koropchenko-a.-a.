@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300, 400,600&display=swap");
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.theme-light {
+    --back: #dfdfec;
+    --element: linear-gradient(45deg, #bfbfd9, #fff);
+    --shadow: #bfbfd9;
+    --pils-back: rgb(0 0 0 / 5%);
+    --text-primary: #333;
+    --text-secondary: #555;
+    --text-third: #000;
+}
+
+.theme-dark {
+    --back: #131417;
+    --element: linear-gradient(45deg, #101010, #2c3e50);
+    --shadow: #3f5973;
+    --pils-back: rgb(255 255 255 / 5%);
+    --text-primary: white;
+    --text-secondary: #6b8cae;
+    --text-third: #777;
+}
+
+input[type="checkbox"] {
+    z-index: -1;
+    display: none;
+}
+
+a:visited,
+a:link {
+    text-decoration: none;
+}
+
+html,
+body {
+    background: var(--back);
+    display: flexbox;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: .9rem;
+    flex-shrink: 0;
+    transition: all .3s ease;
+}
+
+#main-container {
+    position: relative;
+    background: var(--element);
+    box-shadow: -5px -5px 15px -4px rgb(0 0 0 / 10%);
+    overflow: hidden;
+    transition: all .6s;
+    transform: scale(0.6);
+    animation: fade-in 1s forwards;
+    opacity: 0;
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    height: 65px;
+    z-index: 50;
+}
+
+.night-mode {
+    position: absolute;
+    right: 0;
+    text-align: center;
+    margin: 10px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+night-mode:hover {
+    background: rgb(100 100 100 / 10%);
+}
+
+.night-mode:active {
+    background: rgb(100 100 100 / 30%);
+}
+
+.night-mode i {
+    line-height: 45px;
+    color: var(--text-primary);
+    font-size: 16px;
+}
+
+.left-section {
+    height: 100%;
+    background: rgb(0 0 0 / 10%);
+    display: flexbox;
+    display: flex;
+    position: relative;
+    place-content: center space-evenly;
+    align-items: center;
+    padding: 20px;
+}
+
+.pic {
+    width: 150px;
+    height: 150px;
+    flex-basis: 165px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px 6px rgb(0 0 0 / 20%);
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.profile-details {
+    margin-left: 20px;
+}
+
+.name {
+    color: var(--text-primary);
+    font-size: 1.45rem;
+    padding-bottom: 10px;
+}
+
+.profile-maps {
+    display: block;
+    color: var(--text-third);
+    font-size: 1rem;
+}
+
+.profile-maps i {
+    color: var(--text-third);
+    font-size: .8rem;
+}
+
+.profile-summary {
+    color: var(--text-secondary);
+    font-size: .925rem;
+}
+
+.profile-cv {
+    display: block;
+    margin-top: 20px;
+    color: var(--text-cv);
+    font-weight: 700;
+}
+
+.profile-pils {
+    display: flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.pils {
+    background: var(--pils-back);
+    box-shadow: inset 0 0 0 1px var(--border), 0 10px 30px -10px rgb(0 0 0 / 12%);
+    border-radius: 60px;
+    font-size: 13px;
+    transition: all .3s;
+    cursor: pointer;
+    margin: 5px;
+    color: var(--text-primary);
+}
+
+.pils a,
+.pils a:visited,
+.pils a:link {
+    display: block;
+    text-decoration: none;
+    color: var(--main-2-fore);
+    padding: 5px 10px;
+}
+
+.pils a i,
+.pils a:visited i,
+.pils a:link i {
+    padding-right: 2px;
+}
+
+.pils:nth-child(1):hover {
+    box-shadow: inset 0 0 0 1px #6f95fe, 0 10px 35px -10px #6f95fe;
+}
+
+.pils:nth-child(1):hover i {
+    color: #6f95fe;
+}
+
+.pils:nth-child(2):hover {
+    box-shadow: inset 0 0 0 1px #fff, 0 10px 30px -10px rgb(100 100 100 / 60%);
+}
+
+.pils:nth-child(2):hover i {
+    color: #fff;
+}
+
+.pils:nth-child(3):hover {
+    box-shadow: inset 0 0 0 1px #f154ff, 0 10px 35px -10px rgb(255 59 245 / 50%);
+}
+
+.pils:nth-child(3):hover i {
+    color: #f154ff;
+}
+
+.pils:nth-child(4):hover {
+    box-shadow: inset 0 0 0 1px #163ca3, 0 10px 30px -10px rgb(13 60 121 / 50%);
+}
+
+.pils:nth-child(4):hover i {
+    color: #163ca3;
+}
+
+.more {
+    margin: auto;
+    margin-top: 20px;
+    background: var(--pils-back);
+    border-radius: 60px;
+    color: var(--text-primary);
+
+
+}
+
+@media (width >= 768px) {
+    #main-container {
+        width: 540px;
+        height: 300px;
+    }
+
+    #main-container .left-section {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .profile-pic {
+        margin: 0 15px;
+    }
+
+    .profile-details {
+        flex-basis: 400px;
+    }
+
+    .profile-pils {
+        justify-content: flex-end;
+        margin: 0 10px;
+        flex-basis: 240px;
+    }
+}
+
+@keyframes fade-in {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
