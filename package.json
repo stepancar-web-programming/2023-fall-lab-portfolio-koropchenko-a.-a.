@@ -2,12 +2,13 @@
   "devDependencies": {
     "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.29.1"
-  },
-  "eslintConfig": {
-    "extends": "airbnb-base"
+    "eslint-plugin-import": "^2.29.1",
+    "stylelint": "^16.2.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-no-unsupported-browser-features": "^8.0.0"
   },
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "stylelint": "stylelint '**/*.css' --fix"
   }
 }
